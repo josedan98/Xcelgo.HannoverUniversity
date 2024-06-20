@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Platforms>x64</Platforms>
+		<AssemblyName>Experior.Catalog.BeamSensor</AssemblyName>
+		<RootNamespace>Experior.Catalog.BeamSensor</RootNamespace>
+		<SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
+		<TargetFrameworks>net472</TargetFrameworks>
+		<PackageId>Experior.Catalog.BeamSensor</PackageId>
+		<Title>Experior Catalog</Title>
+		<Description>Experior 7.0 Catalog</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>$(EXPERIOR7_BIN)</OutputPath>
+		<BaseOutputPath>C:\Xcelgo\Xcelgo Experior 7</BaseOutputPath>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Experior.Core">
+			<HintPath>$(OutputPath)\Experior.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Experior.Interfaces">
+			<HintPath>$(OutputPath)\Experior.Interfaces.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Experior.Rendering.Interfaces">
+			<HintPath>$(OutputPath)\Experior.Rendering.Interfaces.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="PresentationCore" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+
+	<UsingTask TaskName="Experior.Build" Architecture="x64" AssemblyFile="$(EXPERIOR7_BIN)\Experior.Build.dll" />
+
+	<Target Name="PluginSigning" AfterTargets="AfterBuild">
+		<Message Importance="High" Text="Signing plugin $(TargetFileName)..." />
+		<Experior.Build AssemblyFileLocation="$(OutputPath)$(TargetFileName)"></Experior.Build>
+	</Target>
+	
+ </Project>
