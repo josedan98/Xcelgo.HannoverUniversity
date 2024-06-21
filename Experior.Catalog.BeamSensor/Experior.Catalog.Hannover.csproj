@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Platforms>x64</Platforms>
-		<AssemblyName>Experior.Catalog.BeamSensor</AssemblyName>
-		<RootNamespace>Experior.Catalog.BeamSensor</RootNamespace>
+		<AssemblyName>Experior.Catalog.Hannover</AssemblyName>
+		<RootNamespace>Experior.Catalog.Hannover</RootNamespace>
 		<SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
 		<TargetFrameworks>net472</TargetFrameworks>
-		<PackageId>Experior.Catalog.BeamSensor</PackageId>
+		<PackageId>Experior.Catalog.Hannover</PackageId>
 		<Title>Experior Catalog</Title>
 		<Description>Experior 7.0 Catalog</Description>
 	</PropertyGroup>

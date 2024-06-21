@@ -1,16 +1,16 @@
 ﻿using Experior.Core.Resources;
 using System.Windows.Media;
 
-namespace Experior.Catalog.BeamSensor
+namespace Experior.Catalog.Hannover
 {
     public class CustomCatalog : Experior.Core.Catalog
     {
-        public CustomCatalog() : base("BeamSensorCatalog")
+        public CustomCatalog() : base("Hannover")
         {
             Simulation = Experior.Core.Environment.Simulation.Events | Experior.Core.Environment.Simulation.Physics;
 
-            Add(EmbeddedResource.GetImage("Custom Sensors"), "Part1", "Beam Sender", Experior.Core.Environment.Simulation.Events | Experior.Core.Environment.Simulation.Physics, Create.BeamSensor);
-            Add(EmbeddedResource.GetImage("Custom Sensors"), "Part2", "Beam receiver", Experior.Core.Environment.Simulation.Events | Experior.Core.Environment.Simulation.Physics, Create.BeamSensor);
+            Add(EmbeddedResource.GetImage("Custom Sensors"), "Elevator Component", "Sensor", Experior.Core.Environment.Simulation.Events | Experior.Core.Environment.Simulation.Physics, Create.BeamSensor);
+           
         }
 
         public override ImageSource Logo => EmbeddedResource.GetImage("Logo");
