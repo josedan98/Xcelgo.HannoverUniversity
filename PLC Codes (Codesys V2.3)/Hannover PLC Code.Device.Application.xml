@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.11.0</Version>
+    <SymbolConfigObject version="3.5.11.10" runtimeid="3.5.11.30" libversion="3.5.11.0" compiler="3.5.11.30" lmm="3.5.11.30" profile="CODESYS V3.5 SP11 Patch 3+" settings="SupportOPCUA, LayoutCalculator=CompatibilityClientSideLayoutCalculator" />
+    <ProjectInfo name="Hannover PLC Code" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="GVL_1">
+        <Node name="Anf_EG_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_EGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_EG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="BUTTON1" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_EL_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_ue_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_un_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="In_Anford_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Li_Tuer_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_EGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_EGzu" type="T_BOOL" access="ReadWrite" />
+        <Node name="MOTOR1" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_EG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Si_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_EG_ES" type="T_BOOL" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
