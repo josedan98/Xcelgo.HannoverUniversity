@@ -31,6 +31,7 @@
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="PresentationCore" />
+		<Reference Include="System.ComponentModel.DataAnnotations" />
 		<Reference Include="WindowsBase" />
 	</ItemGroup>
 

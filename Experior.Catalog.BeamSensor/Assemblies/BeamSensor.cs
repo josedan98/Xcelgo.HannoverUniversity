@@ -21,7 +21,7 @@ namespace Experior.Catalog.Hannover.Assemblies
         private bool _isSensorActive;
         private readonly BeamSensorInfo _info;
         private Experior.Core.Parts.Box Box1, Box2;
-        private bool SensorState;
+        
 
         #endregion
         public BeamSensor(BeamSensorInfo info) : base(info)
@@ -174,11 +174,6 @@ namespace Experior.Catalog.Hannover.Assemblies
         public override string Category => "Assembly";
         public override ImageSource Image => EmbeddedResource.GetImage("´BeamSensor");
 
-
-        //private bool SensorState
-        //{
-        //    get => _info.SensorOutput; set => _info.SensorOutput= value;
-        //}
 
     }
     [Serializable, XmlInclude(typeof(BeamSensorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Assemblies.BeamSensorInfo")]
