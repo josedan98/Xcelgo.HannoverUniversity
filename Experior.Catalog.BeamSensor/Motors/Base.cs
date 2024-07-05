@@ -3,12 +3,13 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
 using System.Xml.Serialization;
+using Experior.Catalog.Hannover.Assemblies;
 using Experior.Core.Communication.PLC;
 using Experior.Core.Properties;
 using Experior.Core.Properties.TypeConverter;
 using Experior.Interfaces;
 
-namespace Experior.Catalog.Hannover.Assemblies
+namespace Experior.Catalog.Hannover.Motors
 {
     public abstract class Base : Core.Motors.Electric
     {
@@ -30,7 +31,7 @@ namespace Experior.Catalog.Hannover.Assemblies
 
         #region Constructor
 
-        protected Base(BaseInfo info) : base(info)
+        internal Base(BaseInfo info) : base(info)
         {
             _info = info;
 
@@ -233,6 +234,7 @@ namespace Experior.Catalog.Hannover.Assemblies
             // Arrow Update :
             if (CurrentSpeed >= 0)
                 SetForward();
+          
             else
                 SetBackward();
 
@@ -412,7 +414,7 @@ namespace Experior.Catalog.Hannover.Assemblies
         #endregion
     }
 
-    [Serializable, XmlInclude(typeof(BaseInfo)), XmlType(TypeName = "Experior.Catalog.DeveloperSamples.Motors.Basic.BaseInfo")]
+    [Serializable, XmlInclude(typeof(BaseInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.BaseInfo")]
     public class BaseInfo : Core.Motors.ElectricInfo
     {
         public float baseSpeed = 0.3f;

@@ -9,7 +9,7 @@ namespace Experior.Catalog.Hannover
         {
             var info = new Assemblies.BeamSensorInfo
             {
-                name= Assembly.GetValidName("Hannover")
+                name= Assembly.GetValidName("Hannover Motor")
             };
             return new Assemblies.BeamSensor(info);
         }

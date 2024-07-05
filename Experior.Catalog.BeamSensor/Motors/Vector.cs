@@ -9,7 +9,7 @@ using Experior.Core.Properties.TypeConverter;
 using Experior.Interfaces;
 using Experior.Interfaces.Collections;
 
-namespace Experior.Catalog.Hannover.Assemblies
+namespace Experior.Catalog.Hannover.Motors
 {
     public class Vector : Base, IElectricMotorTranslation
     {
@@ -41,7 +41,7 @@ namespace Experior.Catalog.Hannover.Assemblies
             Add(info.outputMaxLimit);
 
             if (info.name == string.Empty)
-                info.name = GetValidName("Basic Vector Motor");
+                info.name = GetValidName("Hannover Motor");
 
             Core.Environment.Scene.OnLoaded += Scene_OnLoaded;
 
@@ -283,7 +283,7 @@ namespace Experior.Catalog.Hannover.Assemblies
         #endregion
     }
 
-    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.DeveloperSamples.Motors.Basic.VectorInfo")]
+    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.Basic.VectorInfo")]
     public class VectorInfo : BaseInfo
     {
         public float currentPosition;
