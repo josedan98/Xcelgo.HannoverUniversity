@@ -48,7 +48,7 @@ namespace Experior.Catalog.Hannover.Assemblies
             //Sensor length is changed
             //The boxes shouyld be repositioned
             _sensor.Length = Length;
-            Box1.LocalPosition = new Vector3(-(_sensor.Length + Box1.Length) / 2, 0, 0);
+            Box1.LocalPosition = new Vector3(-(_sensor.Length + Box1.Length) / 2 , 0, 0);
             Box2.LocalPosition = new Vector3((_sensor.Length + Box2.Length) / 2, 0, 0);
         }
         private void ActivateSensor(bool value)

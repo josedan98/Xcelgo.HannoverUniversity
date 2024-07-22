@@ -231,7 +231,7 @@ namespace Experior.Catalog.Hannover.Motors
             else
                 CurrentSpeed = _targetSpeed;
 
-            // Arrow Update :
+            // Arrow UpdateOutput :
             if (CurrentSpeed >= 0)
                 SetForward();
           

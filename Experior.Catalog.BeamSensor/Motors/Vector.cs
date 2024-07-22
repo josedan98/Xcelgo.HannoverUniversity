@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Numerics;
 using System.Xml.Serialization;
@@ -8,6 +9,7 @@ using Experior.Core.Properties;
 using Experior.Core.Properties.TypeConverter;
 using Experior.Interfaces;
 using Experior.Interfaces.Collections;
+using static Experior.Core.Reports.Statistics.Statistic;
 
 namespace Experior.Catalog.Hannover.Motors
 {
@@ -22,6 +24,8 @@ namespace Experior.Catalog.Hannover.Motors
         private IMotorTranslationPartCollection _parts = new PartCollection();
 
         private float _deltaMovement;
+        
+       
 
         #endregion
 
@@ -36,6 +40,15 @@ namespace Experior.Catalog.Hannover.Motors
 
             if (info.outputMaxLimit == null)
                 info.outputMaxLimit = new Output() { DataSize = DataSize.BOOL, Symbol = "Max. Limit" };
+
+           
+            Sensors.Add(new Sensor(this)
+            {
+                Position = 0.5f,
+                Range=0.01f,
+                
+            });
+
 
             Add(info.outputMinLimit);
             Add(info.outputMaxLimit);
@@ -52,10 +65,34 @@ namespace Experior.Catalog.Hannover.Motors
 
         #region Public Properties
 
+        public List<Sensor> Sensors => _info.sensors;
+
+        [Category("Sensors")]
+        [DisplayName("Number of Sensors")]
+        [PropertyOrder(0)]
+        public int Amount
+        {
+            get => _info.amount;
+            set
+            {
+                if (value <= 0f)
+                    return;
+
+                 _info.amount = value;
+                //todo update the list of sensors
+                //sensors.Add(_info.amount);
+                
+                //for (var i = 0; i < _info.amount; i++)
+                //{
+                //   // sensors[i].Add(_info.amount);
+                //}
+            }
+        }
+
         [Category("Movement")]
         [DisplayName("Offset")]
         [Description("Value used to activate limit PLC Input signals")]
-        [PropertyOrder(0)]
+        [PropertyOrder(1)]
         public float Offset
         {
             get => _info.offset;
@@ -70,7 +107,7 @@ namespace Experior.Catalog.Hannover.Motors
 
         [Category("Movement")]
         [DisplayName("Max. Limit")]
-        [PropertyOrder(1)]
+        [PropertyOrder(2)]
         [TypeConverter(typeof(FloatMeterToMillimeter))]
         public float MaxLimit
         {
@@ -87,7 +124,7 @@ namespace Experior.Catalog.Hannover.Motors
 
         [Category("Movement")]
         [DisplayName("Min. Limit")]
-        [PropertyOrder(2)]
+        [PropertyOrder(3)]
         [TypeConverter(typeof(FloatMeterToMillimeter))]
         public float MinLimit
         {
@@ -101,7 +138,7 @@ namespace Experior.Catalog.Hannover.Motors
             }
         }
 
-        [Category("PLC Input Signlas")]
+        [Category("PLC Input Signals")]
         [DisplayName("Min. Limit")]
         [PropertyOrder(1)]
         public Output OutputMinLimit
@@ -118,6 +155,9 @@ namespace Experior.Catalog.Hannover.Motors
             get => _info.outputMaxLimit;
             set => _info.outputMaxLimit = value;
         }
+
+   
+
 
         [Browsable(false)]
         public float CurrentPosition
@@ -192,7 +232,7 @@ namespace Experior.Catalog.Hannover.Motors
             if (CurrentSpeed == 0f)
                 return;
 
-            //Distance Update:
+            //Distance UpdateOutput:
             _deltaMovement = deltatime * CurrentSpeed;
             CurrentPosition += _deltaMovement;
 
@@ -201,6 +241,16 @@ namespace Experior.Catalog.Hannover.Motors
 
             //Movement Constraints:
             LimitController();
+
+            UpdateSensors();
+        }
+
+        private void UpdateSensors()
+        {
+            foreach (var sensor in Sensors) 
+            {
+                sensor.UpdateOutput(CurrentPosition);
+            }
         }
 
         public override void Reset()
@@ -283,9 +333,10 @@ namespace Experior.Catalog.Hannover.Motors
         #endregion
     }
 
-    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.Basic.VectorInfo")]
+    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.VectorInfo")]
     public class VectorInfo : BaseInfo
     {
+        public int amount { get; set; }
         public float currentPosition;
         public Vector3 vectorDirection = Vector3.UnitX;
 
@@ -295,5 +346,45 @@ namespace Experior.Catalog.Hannover.Motors
 
         public Output outputMaxLimit;
         public Output outputMinLimit;
+
+        public List<Sensor> sensors { get; set; } = new List<Sensor>();
     }
+
+    [Serializable, XmlInclude(typeof(Sensor)), XmlType("Experior.Catalog.Hannover.Motors.Sensor")]
+    public class Sensor
+    {
+        public float Position {  get; set; }
+        public float Range { get; set; }
+        public Output SensorOutput
+        {
+            get; set;
+        }
+        public void UpdateOutput(float position)
+        {
+
+            if (Position- (Range / 2) <= position && Position + (Range/ 2) >= position)
+            {
+                
+                Log.Write($"Sensor {ToString()} is in range");
+                SensorOutput.On();
+            }
+            else
+            {
+                SensorOutput.Off(); 
+            }
+            //Compare position with Position and range
+        }
+
+        public Sensor(Vector motor)
+        {
+            SensorOutput = new Output() { DataSize = DataSize.BOOL, SymbolName = "Sensor"};
+            motor.Add(SensorOutput);
+        }
+
+        public override string ToString()
+        {
+            return $"A sensor at position {Position}";
+        }
+    }
+
 }
