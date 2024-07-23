@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|c:\\users\\schneider\\xcelgo.hannoveruniversity\\experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|solutionrelative:experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Experior.Catalog.Hannover",
+              "DocumentMoniker": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "RelativeDocumentMoniker": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "ToolTip": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "RelativeToolTip": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-04T13:39:16.29Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

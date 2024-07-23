@@ -1,0 +1,11 @@
+C:\Xcelgo\Xcelgo Experior 7\Experior.Catalog.Hannover.dll.config
+C:\Xcelgo\Xcelgo Experior 7\Experior.Catalog.Hannover.dll
+C:\Xcelgo\Xcelgo Experior 7\Experior.Catalog.Hannover.pdb
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.csproj.AssemblyReference.cache
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.AssemblyInfoInputs.cache
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.AssemblyInfo.cs
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.csproj.CoreCompileInputs.cache
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.sourcelink.json
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.dll
+C:\Users\Schneider\Xcelgo.HannoverUniversity\Experior.Catalog.BeamSensor\obj\x64\Debug\Experior.Catalog.Hannover.pdb

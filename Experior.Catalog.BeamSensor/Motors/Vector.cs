@@ -41,14 +41,6 @@ namespace Experior.Catalog.Hannover.Motors
             if (info.outputMaxLimit == null)
                 info.outputMaxLimit = new Output() { DataSize = DataSize.BOOL, Symbol = "Max. Limit" };
 
-           
-            Sensors.Add(new Sensor(this)
-            {
-                Position = 0.5f,
-                Range=0.01f,
-                
-            });
-
 
             Add(info.outputMinLimit);
             Add(info.outputMaxLimit);
@@ -58,7 +50,17 @@ namespace Experior.Catalog.Hannover.Motors
 
             Core.Environment.Scene.OnLoaded += Scene_OnLoaded;
 
+            AddSensorSignals();
+
             ControlSignals();
+        }
+
+        public void AddSensorSignals()
+        {
+            foreach (var sensor in Sensors)
+            {
+                Add(sensor.SensorOutput);
+            }
         }
 
         #endregion
@@ -69,23 +71,30 @@ namespace Experior.Catalog.Hannover.Motors
 
         [Category("Sensors")]
         [DisplayName("Number of Sensors")]
-        [PropertyOrder(0)]
+        [RefreshProperties(RefreshProperties.All)]
+        [PropertyOrder(1)]
         public int Amount
         {
-            get => _info.amount;
+            get => Sensors.Count;
             set
             {
-                if (value <= 0f)
+                if (value < 0f)
                     return;
 
-                 _info.amount = value;
-                //todo update the list of sensors
-                //sensors.Add(_info.amount);
-                
-                //for (var i = 0; i < _info.amount; i++)
-                //{
-                //   // sensors[i].Add(_info.amount);
-                //}
+                while (Sensors.Count > value) 
+                {
+                    var sensorToRemove = Sensors[Sensors.Count - 1];
+                    sensorToRemove.Dispose();
+                    Remove(sensorToRemove.SensorOutput);
+                    Sensors.Remove(sensorToRemove);
+                }
+
+                while (Sensors.Count < value)
+                {
+                    var sensor = new Sensor();
+                    Sensors.Add(sensor);
+                    Add(sensor.SensorOutput);
+                }
             }
         }
 
@@ -147,7 +156,7 @@ namespace Experior.Catalog.Hannover.Motors
             set => _info.outputMinLimit = value;
         }
 
-        [Category("PLC Input Signlas")]
+        [Category("PLC Input Signals")]
         [DisplayName("Max. Limit")]
         [PropertyOrder(2)]
         public Output OutputMaxLimit
@@ -336,7 +345,7 @@ namespace Experior.Catalog.Hannover.Motors
     [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.VectorInfo")]
     public class VectorInfo : BaseInfo
     {
-        public int amount { get; set; }
+       
         public float currentPosition;
         public Vector3 vectorDirection = Vector3.UnitX;
 
@@ -351,21 +360,20 @@ namespace Experior.Catalog.Hannover.Motors
     }
 
     [Serializable, XmlInclude(typeof(Sensor)), XmlType("Experior.Catalog.Hannover.Motors.Sensor")]
-    public class Sensor
+    public sealed class Sensor : IDisposable
     {
+        private bool disposedValue;
+
         public float Position {  get; set; }
         public float Range { get; set; }
-        public Output SensorOutput
-        {
-            get; set;
-        }
+        public Output SensorOutput { get; set; } = new Output { DataSize = DataSize.BOOL, SymbolName = "Sensor" };
         public void UpdateOutput(float position)
         {
 
             if (Position- (Range / 2) <= position && Position + (Range/ 2) >= position)
             {
                 
-                Log.Write($"Sensor {ToString()} is in range");
+                Log.Write($"{ToString()} is in range");
                 SensorOutput.On();
             }
             else
@@ -375,15 +383,29 @@ namespace Experior.Catalog.Hannover.Motors
             //Compare position with Position and range
         }
 
-        public Sensor(Vector motor)
-        {
-            SensorOutput = new Output() { DataSize = DataSize.BOOL, SymbolName = "Sensor"};
-            motor.Add(SensorOutput);
-        }
-
         public override string ToString()
         {
             return $"A sensor at position {Position}";
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    SensorOutput?.Dispose();
+                }
+
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 
