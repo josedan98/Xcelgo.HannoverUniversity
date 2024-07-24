@@ -342,7 +342,7 @@ namespace Experior.Catalog.Hannover.Motors
         #endregion
     }
 
-    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.VectorInfo")]
+    [Serializable, XmlInclude(typeof(VectorInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.Basic.VectorInfo")]
     public class VectorInfo : BaseInfo
     {
        
@@ -359,7 +359,7 @@ namespace Experior.Catalog.Hannover.Motors
         public List<Sensor> sensors { get; set; } = new List<Sensor>();
     }
 
-    [Serializable, XmlInclude(typeof(Sensor)), XmlType("Experior.Catalog.Hannover.Motors.Sensor")]
+    [Serializable, XmlInclude(typeof(Sensor)), XmlType("Experior.Catalog.Hannover.Motors.Basic.Sensor")]
     public sealed class Sensor : IDisposable
     {
         private bool disposedValue;

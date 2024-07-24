@@ -414,7 +414,7 @@ namespace Experior.Catalog.Hannover.Motors
         #endregion
     }
 
-    [Serializable, XmlInclude(typeof(BaseInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.BaseInfo")]
+    [Serializable, XmlInclude(typeof(BaseInfo)), XmlType(TypeName = "Experior.Catalog.Hannover.Motors.Basic.BaseInfo")]
     public class BaseInfo : Core.Motors.ElectricInfo
     {
         public float baseSpeed = 0.3f;
