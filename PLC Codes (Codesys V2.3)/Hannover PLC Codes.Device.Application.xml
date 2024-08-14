@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.11.0</Version>
+    <SymbolConfigObject version="3.5.11.10" runtimeid="3.5.11.30" libversion="3.5.11.0" compiler="3.5.11.30" lmm="3.5.11.30" profile="CODESYS V3.5 SP11 Patch 3+" settings="SupportOPCUA, LayoutCalculator=CompatibilityClientSideLayoutCalculator" />
+    <ProjectInfo name="Hannover PLC Codes" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="GVL">
+        <Node name="Anz_Ruf_3OGab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_1OG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_1OG_Zu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_2OG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_2OG_Zu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_3OG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_3OG_Zu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_EG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Tuer_EG_Zu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Betr_Art_Prog" type="T_BOOL" access="ReadWrite" />
+        <Node name="Betriebsart" type="T_BOOL" access="ReadWrite" />
+        <Node name="Bewegung_Stockwerke_inv" type="T_REAL" access="ReadWrite" />
+        <Node name="Bewegung_Stockwerke_Visu" type="T_REAL" access="ReadWrite" />
+        <Node name="Fahrk_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fahrk_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_EL_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_EL_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_EL_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_EL_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_un_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_un_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Hindernis_1OG_sim" type="T_BOOL" access="ReadWrite" />
+        <Node name="Hindernis_2OG_sim" type="T_BOOL" access="ReadWrite" />
+        <Node name="Hindernis_3OG_sim" type="T_BOOL" access="ReadWrite" />
+        <Node name="Hindernis_EG_sim" type="T_BOOL" access="ReadWrite" />
+        <Node name="In_Anford_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="In_Anford_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="In_Anford_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="In_Anford_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="IN_Steu_Ein" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lamp_Test" type="T_BOOL" access="ReadWrite" />
+        <Node name="Li_Tuer_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Li_Tuer_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Li_Tuer_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Li_Tuer_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_FK_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_1OGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_1OGzu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_2OGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_2OGzu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_3OGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_3OGzu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_EGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_EGzu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_zu_3OG_man_sim" type="T_BOOL" access="ReadWrite" />
+        <Node name="Not_Aus" type="T_BOOL" access="ReadWrite" />
+        <Node name="NOTRUF" type="T_BOOL" access="ReadWrite" />
+        <Node name="PROG" type="T_BOOL" access="ReadWrite" />
+        <Node name="PROG_Visu" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_1OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_2OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_3OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Auf_EG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Si_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Si_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Si_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Si_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_1OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_2OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_3OG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tuer_Zu_EG_ES" type="T_BOOL" access="ReadWrite" />
+        <Node name="Ue_Last" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL_1">
+        <Node name="Anf_1OG_FK_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_1OG_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_2OG_FK_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_2OG_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_3OG_FK_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_EG_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_Rel" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anf_Rel_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_1OG_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_1OG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_2OG_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_2OG_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_Ab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_Auf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_zuhoch" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_FK_zutief" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_InnenST" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Insp" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_NOT_AUS_BP" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_NOT_AUS_FK" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Prog" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_1OGab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_1OGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_2OGab" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_2OGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Anz_Ruf_EGauf" type="T_BOOL" access="ReadWrite" />
+        <Node name="Betriebsart_Switch" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_ue_1OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_ue_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_ue_3OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_un_2OG" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_1OG_Sensor" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_1OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_2G_Sensor" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_2OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_3G_Sensor" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_3OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_EG_Sensor" type="T_BOOL" access="ReadWrite" />
+        <Node name="Lischr_S_EG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_auf_1OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_auf_2OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_auf_3OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_auf_EG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_zu_1OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_zu_2OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_zu_3OG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mot_Tuer_zu_EG_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Fahrkorb_ab_T" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Fahrkorb_auf_T" type="T_BOOL" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
