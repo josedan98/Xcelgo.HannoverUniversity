@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\",
+  "WorkspaceRootPath": "C:\\Users\\SESA739310\\source\\repos\\Xcelgo.HannoverUniversity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|c:\\users\\schneider\\xcelgo.hannoveruniversity\\experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|c:\\users\\sesa739310\\source\\repos\\xcelgo.hannoveruniversity\\experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|solutionrelative:experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|c:\\users\\sesa739310\\source\\repos\\xcelgo.hannoveruniversity\\experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{73CFEE7E-6722-4531-BDF9-03B666828813}|Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj|solutionrelative:experior.catalog.beamsensor\\experior.catalog.hannover.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,18 +18,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Experior.Catalog.Hannover",
-              "DocumentMoniker": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "DocumentMoniker": "C:\\Users\\SESA739310\\source\\repos\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
               "RelativeDocumentMoniker": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
-              "ToolTip": "C:\\Users\\Schneider\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "ToolTip": "C:\\Users\\SESA739310\\source\\repos\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
               "RelativeToolTip": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-04T13:39:16.29Z",
+              "WhenOpened": "2024-08-14T13:49:48.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Experior.Catalog.Hannover",
+              "DocumentMoniker": "C:\\Users\\SESA739310\\source\\repos\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "RelativeDocumentMoniker": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "ToolTip": "C:\\Users\\SESA739310\\source\\repos\\Xcelgo.HannoverUniversity\\Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "RelativeToolTip": "Experior.Catalog.BeamSensor\\Experior.Catalog.Hannover.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-14T13:49:43.701Z",
               "EditorCaption": ""
             }
           ]
