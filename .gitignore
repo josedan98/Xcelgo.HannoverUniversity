@@ -32,7 +32,8 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-Experior.Catalog.BeamSensor/obj/*
+Experior.Catalog.BeamSensor/obj/
+Experior.Catalog.BeamSensor/obj/x64/Debug
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
