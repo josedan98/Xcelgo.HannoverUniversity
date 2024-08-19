@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Experior 7.0 Catalog")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c736c69e74be348493f4a19c630c9c7e5f49fae8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba96167f8218b1d4ca1d2cefe827800236b5c39")]
 [assembly: System.Reflection.AssemblyProductAttribute("Experior.Catalog.Hannover")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Experior.Catalog.Hannover")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

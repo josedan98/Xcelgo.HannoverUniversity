@@ -31,6 +31,8 @@
         <Node name="FK_EL_2OG" type="T_BOOL" access="ReadWrite" />
         <Node name="FK_EL_3OG" type="T_BOOL" access="ReadWrite" />
         <Node name="FK_EL_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_ue_EG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FK_VE_un_1OG" type="T_BOOL" access="ReadWrite" />
         <Node name="FK_VE_un_3OG" type="T_BOOL" access="ReadWrite" />
         <Node name="FK_VE_un_EG" type="T_BOOL" access="ReadWrite" />
         <Node name="Hindernis_1OG_sim" type="T_BOOL" access="ReadWrite" />

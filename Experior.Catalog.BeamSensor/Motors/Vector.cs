@@ -67,7 +67,7 @@ namespace Experior.Catalog.Hannover.Motors
 
         #region Public Properties
 
-        public List<Sensor> Sensors => _info.sensors;
+        [Category("Sensors")] public IReadOnlyCollection<Sensor> Sensors => _info.sensors.AsReadOnly();
 
         [Category("Sensors")]
         [DisplayName("Number of Sensors")]
@@ -83,16 +83,16 @@ namespace Experior.Catalog.Hannover.Motors
 
                 while (Sensors.Count > value) 
                 {
-                    var sensorToRemove = Sensors[Sensors.Count - 1];
+                    var sensorToRemove = _info.sensors[Sensors.Count - 1];
                     sensorToRemove.Dispose();
                     Remove(sensorToRemove.SensorOutput);
-                    Sensors.Remove(sensorToRemove);
+                    _info.sensors.Remove(sensorToRemove);
                 }
 
                 while (Sensors.Count < value)
                 {
                     var sensor = new Sensor();
-                    Sensors.Add(sensor);
+                    _info.sensors.Add(sensor);
                     Add(sensor.SensorOutput);
                 }
             }
@@ -267,6 +267,7 @@ namespace Experior.Catalog.Hannover.Motors
             base.Reset();
 
             Calibrate();
+            UpdateSensors();
         }
 
         #endregion
@@ -362,14 +363,27 @@ namespace Experior.Catalog.Hannover.Motors
     [Serializable, XmlInclude(typeof(Sensor)), XmlType("Experior.Catalog.Hannover.Motors.Basic.Sensor")]
     public sealed class Sensor : IDisposable
     {
-        private bool disposedValue;
-
+        private bool _disposedValue;
+        private string _name;
+        [TypeConverter(typeof(FloatMeterToMillimeter))]
         public float Position {  get; set; }
-        public float Range { get; set; }
+
+        [TypeConverter(typeof(FloatMeterToMillimeter))]
+        public float Range { get; set; } = 0.2f;
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                SensorOutput.SymbolName = value;
+            }
+        }
+
         public Output SensorOutput { get; set; } = new Output { DataSize = DataSize.BOOL, SymbolName = "Sensor" };
         public void UpdateOutput(float position)
         {
-
             if (Position- (Range / 2) <= position && Position + (Range/ 2) >= position)
             {
                 
@@ -380,7 +394,6 @@ namespace Experior.Catalog.Hannover.Motors
             {
                 SensorOutput.Off(); 
             }
-            //Compare position with Position and range
         }
 
         public override string ToString()
@@ -390,14 +403,14 @@ namespace Experior.Catalog.Hannover.Motors
 
         private void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
                     SensorOutput?.Dispose();
                 }
 
-                disposedValue = true;
+                _disposedValue = true;
             }
         }
 
